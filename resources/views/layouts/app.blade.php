@@ -45,12 +45,13 @@
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
     <title>Otika - Admin Dashboard Template</title>
-     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <!-- General CSS Files -->
     <link rel="stylesheet" href="/assets/css/app.min.css">
     <!-- Template CSS -->
     <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="stylesheet" href="/assets/css/components.css">
+    <link rel="stylesheet" href="assets/bundles/datatables/datatables.min.css">
+  <link rel="stylesheet" href="assets/bundles/datatables/DataTables-1.10.16/css/dataTables.bootstrap4.min.css">
     <!-- Custom style CSS -->
     <link rel="stylesheet" href="/assets/css/custom.css">
     <link rel='shortcut icon' type='image/x-icon' href='/assets/img/favicon.ico' />
@@ -217,6 +218,10 @@
     <script src="/assets/js/scripts.js"></script>
     <!-- Custom JS File -->
     <script src="/assets/js/custom.js"></script>
+     <script src="/assets/bundles/datatables/datatables.min.js"></script>
+  <script src="/assets/bundles/datatables/DataTables-1.10.16/js/dataTables.bootstrap4.min.js"></script>
+  <!-- Page Specific JS File -->
+  <script src="/assets/js/page/datatables.js"></script>
 </body>
 
 
