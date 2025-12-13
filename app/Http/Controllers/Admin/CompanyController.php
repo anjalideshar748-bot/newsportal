@@ -10,7 +10,10 @@ class CompanyController extends Controller
 {
     public function index()
     {
-        $companys = Company::first();
+        $company = Company::first();
+        if(!$company){
+            return redirect()->route('admin.company.create');
+        }
         return view('admin.company.index', compact('company'));
     }
 
@@ -62,7 +65,8 @@ class CompanyController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $company=Company::find($id);
+        return view('admin.company.edit', compact('company'));
     }
 
     /**
