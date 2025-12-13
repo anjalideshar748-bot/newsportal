@@ -41,7 +41,13 @@
                                             <td>
                                                 {{ $company->phone }}
                                             </td>
-                                            <td><a href="{{route('admin.company.edit',$company->id)}}" class="btn btn-primary btn-sm">Edit</a></td>
+                                            <td></td>
+                                                <form action="{{ route('admin.company.destroy') }}" method="post">
+                                                    @csrf
+                                                    @method('delete')
+                                                    <a href="{{route('admin.company.edit',$company->id)}}"
+                                                class="btn btn-primary btn-sm">Edit</a>
+                                                    <button class="btn btn-danger btn-sm">Delete</button>
                                         </tr>
 
                                        @endif
