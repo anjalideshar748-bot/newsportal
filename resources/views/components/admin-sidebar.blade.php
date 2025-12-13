@@ -19,7 +19,7 @@
                                     data-feather="tag"></i><span>Category</span></a>
                         </li>
                           <li class="dropdown ">
-                            <a href="index.html" class="nav-link"><i class="
+                            <a href="{{route('admin.category.index')}}" class="nav-link"><i class="
 fas fa-newspaper"></i><span>Article</span></a>
                         </li>
                           <li class="dropdown ">
