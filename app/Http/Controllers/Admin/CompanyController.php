@@ -3,13 +3,15 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Company;
 use Illuminate\Http\Request;
 
 class CompanyController extends Controller
 {
     public function index()
     {
-        return view('admin.company.index');
+        $companys = Company::first();
+        return view('admin.company.index', compact('company'));
     }
 
 
@@ -23,7 +25,28 @@ class CompanyController extends Controller
      */
     public function store(Request $request)
     {
-        return $request;
+        //return $request;
+        $request->validate([
+            'name' => 'required|string',
+            'email' => 'required|email',
+            'phone' => 'required',
+            'logo' => 'nullable|image',
+        ]);
+        $company = new Company();
+        $company->name = $request->name;
+        $company->email = $request->email;
+        $company->phone = $request->phone;
+        $company->youtube = $request->youtube;
+        $company->facebook = $request->facebook;
+        $company->instagram = $request->instagram;
+        $file= $request->logo;
+        if($file){
+            $filename = time().'.'.$file->getClientOriginalExtension();
+            $file->move('images', $filename);
+            $company->logo = "images/$filename";
+        }
+        $company->save();
+        return redirect()->route('admin.company.index');
     }
 
     /**
