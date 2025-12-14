@@ -20,6 +20,9 @@ Route::middleware('auth')->group(function () {
 
     Route::resource("/admin/company",CompanyController::class)->names('admin.company');
     Route::resource("/admin/category",CompanyController::class)->names('admin.category');
+    Route::get('/admin', function(){
+        return view('admin.index');
+    })->name('admin.index');
 });
 
 
