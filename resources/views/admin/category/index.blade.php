@@ -6,9 +6,8 @@
                     <div class="card">
                         <div class="card-header d-flex justify-content-between">
                             <h4>Categories</h4>
-                            @if (!$category)
                                 <a href="{{ route('admin.category.create') }}" class="btn btn-primary ml-auto">Add New</a>
-                            @endif
+                           
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -50,7 +49,7 @@
                                                     <button class="btn btn-danger btn-sm">Delete</button>
                                         </tr>
 
-                                       @endif
+
 
                                       @endforeach
                                     </tbody>
