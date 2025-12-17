@@ -32,8 +32,8 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         $category = new Category();
-        $category->title = $request->title;
-        $category->slug=Str::slug($request->title);
+        $category->title = $request->name;
+        $category->slug=Str::slug($request->name);
         $category->meta_keywords = $request->meta_keywords;
         $category->meta_description = $request->meta_description;
         $category->save();
