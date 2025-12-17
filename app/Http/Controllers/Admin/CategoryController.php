@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use Illuminate\Support\Str;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use Illuminate\Http\Request;
@@ -30,7 +31,13 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $category = new Category();
+        $category->title = $request->title;
+        $category->slug=Str::slug($request->title);
+        $category->meta_keywords = $request->meta_keywords;
+        $category->meta_description = $request->meta_description;
+        $category->save();
+        return redirect()->route('admin.category.index');
     }
 
     /**
