@@ -7,7 +7,7 @@
                         <div class="card-header d-flex justify-content-between">
                             <h4>Categories</h4>
                                 <a href="{{ route('admin.category.create') }}" class="btn btn-primary ml-auto">Add New</a>
-                           
+
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -24,10 +24,10 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                      @foreach ($categories as $category)
+                                      @foreach ($categories as $index=>$category)
                                             <tr>
                                             <td>
-                                                1
+                                                {{++$index}}
                                             </td>
                                             <td>
                                                 {{ $category->title }}
