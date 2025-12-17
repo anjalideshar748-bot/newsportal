@@ -30,7 +30,10 @@
                                             <td>
                                                 1
                                             </td>
-                                            <td>{{ $category->title }}</td>
+                                            <td>
+                                                {{ $category->title }}
+
+                                            </td>
 
                                             <td>
                                                 {{ $category->slug }}
