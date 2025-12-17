@@ -93,7 +93,7 @@ class CompanyController extends Controller
             $file->move('images', $filename);
             $company->logo = "images/$filename";
         }
-        $company->save();
+        $company->update();
         return redirect()->route('admin.company.index');
     }
 
